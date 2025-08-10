@@ -1,0 +1,279 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: #1a2a6c; /* 静态深蓝色背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 添加星空背景效果 */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(2px 2px at 40px 60px, #ffffff, transparent),
+        radial-gradient(2px 2px at 20px 20px, #ffffff, transparent),
+        radial-gradient(1px 1px at 60px 40px, #ffffff, transparent),
+        radial-gradient(1px 1px at 30px 80px, #ffffff, transparent),
+        radial-gradient(1px 1px at 50px 30px, #ffffff, transparent),
+        radial-gradient(1px 1px at 70px 70px, #ffffff, transparent),
+        radial-gradient(1px 1px at 90px 20px, #ffffff, transparent),
+        radial-gradient(1px 1px at 100px 90px, #ffffff, transparent);
+    background-size: 100px 100px;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.background-circle {
+    position: fixed;
+    border-radius: 50%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+    z-index: 0;
+    box-shadow: 0 0 40px rgba(100, 100, 255, 0.2);
+}
+
+.circle1 {
+    width: 350px;
+    height: 350px;
+    top: 10%;
+    left: 5%;
+    animation-duration: 18s;
+    background: linear-gradient(135deg, rgba(106, 90, 205, 0.2), rgba(75, 0, 130, 0.1));
+}
+
+.circle2 {
+    width: 500px;
+    height: 500px;
+    bottom: 5%;
+    right: 10%;
+    animation-duration: 22s;
+    background: linear-gradient(135deg, rgba(65, 105, 225, 0.2), rgba(0, 0, 205, 0.1));
+}
+
+.circle3 {
+    width: 250px;
+    height: 250px;
+    bottom: 30%;
+    left: 15%;
+    animation-duration: 25s;
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(147, 112, 219, 0.1));
+}
+
+/* 移除了float动画 */
+
+/* Main container for all pages */
+.main-container {
+    display: flex;
+    width: 850px;
+    min-height: 500px;
+    background: rgba(255, 255, 255, 0.92); /* Semi-transparent white */
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 220px;
+    background: rgba(248, 249, 250, 0.85); /* Semi-transparent grey */
+    padding: 25px;
+    border-right: 1px solid rgba(222, 226, 230, 0.7);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h3 {
+    margin: 0 0 25px 0;
+    color: #495057;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar-menu li {
+    margin-bottom: 12px;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 12px 18px;
+    color: #495057;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+}
+
+.sidebar-menu a:hover {
+    background-color: rgba(233, 236, 239, 0.9);
+}
+
+.sidebar-menu a.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);
+}
+
+/* 主标题样式 */
+.main-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #343a40;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 模式选择提示文字样式 */
+.mode-selection-text {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #495057;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+/* Content Container Styles */
+.content-container {
+    flex-grow: 1;
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Button Styles */
+.button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+/* Mode Selection Button Styles */
+.mode-button-container {
+    text-align: center;
+}
+
+.mode-button {
+    margin-top: 15px;
+    display: inline-block;
+    width: auto;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    min-width: 150px;
+}
+
+.easy-mode {
+    background-color: #007bff;
+    margin-right: 20px;
+}
+
+.easy-mode:hover {
+    background-color: #0056b3;
+}
+
+.hard-mode {
+    background-color: #dc3545;
+}
+
+.hard-mode:hover {
+    background-color: #c82333;
+}
+
+/* Hard Mode Theme Overrides */
+.theme-hard .sidebar-menu a.active {
+    background-color: #dc3545; /* Red */
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.4);
+}
+
+.theme-hard .button {
+    background-color: #dc3545;
+}
+
+.theme-hard .button:hover {
+    background-color: #c82333; /* Darker Red */
+}
+
+.theme-hard .form-group input:focus {
+    border-color: #f5c6cb; /* Light Red */
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Footer Styles */
+footer {
+  position: fixed; bottom: 0; left: 0; width: 100%;
+  text-align: center; padding: 20px; font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  border-top: none;
+  font-weight: 500;
+}
+footer a { color: #fff; text-decoration: none; transition: color 0.3s; }
+footer a:hover { color: #fff; text-decoration: underline; }

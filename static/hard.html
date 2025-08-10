@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>encrypt靶场 - 困难模式</title>
+  <script src="/static/js/crypto-js.min.js"></script>
+  <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body class="theme-hard">
+  <div class="background-circle circle1"></div>
+  <div class="background-circle circle2"></div>
+  <div class="background-circle circle3"></div>
+
+  <div class="main-container">
+    <div class="sidebar">
+        <h3>困难模式</h3>
+        <ul class="sidebar-menu" id="challenge-menu">
+            <li><a href="#" class="active" data-func="sendDataAes" data-url="encrypt/aes">AES固定Key</a></li>
+            <li><a href="#" data-func="sendDataRandomAes" data-url="encrypt/aes_random_key">AES随机Key</a></li>
+            <li><a href="#" data-func="fetchAndSendDataAes" data-url="encrypt/aes">AES服务端获取Key</a></li>
+            <li><a href="#" data-func="sendEncryptedDataRSA" data-url="encrypt/rsa">Rsa加密</a></li>
+            <li><a href="#" data-func="sendDataAesRsa" data-url="encrypt/aesrsa">AES+Rsa加密</a></li>
+            <li><a href="#" data-func="encryptAndSendDataDES" data-url="encrypt/des">Des规律Key</a></li>
+            <li><a href="#" data-func="sendDataWithNonce" data-url="encrypt/signdata">明文加签</a></li>
+            <li><a href="#" data-func="sendDataWithNonceServer" data-url="encrypt/signdata">加签key在服务器端</a></li>
+            <li><a href="#" data-func="sendLoginRequest" data-url="encrypt/norepeater">禁止重放</a></li>
+        </ul>
+    </div>
+    <div class="content-container">
+      <h2>encrypt靶场</h2>
+
+      <div class="form-group">
+        <label for="username">账号</label>
+        <input type="text" id="username" name="username" placeholder="用户名" required value="admin">
+      </div>
+
+      <div class="form-group">
+        <label for="password">密码</label>
+        <input type="password" id="password" name="password" placeholder="请输入密码" required value="123456">
+      </div>
+
+      <button id="login-button" class="button">登录</button>
+    </div>
+  </div>
+
+  <script src="/static/js/hard.js"></script>
+  <footer>
+    本靶场由 <a href="https://github.com/PurpleNewNew" target="_blank">PurpleNewNew</a> 重构
+  </footer>
+</body>
+</html>

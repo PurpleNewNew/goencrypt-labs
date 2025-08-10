@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录成功</title>
+  <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+  <div class="background-circle circle1"></div>
+  <div class="background-circle circle2"></div>
+  <div class="background-circle circle3"></div>
+
+  <div class="main-container">
+    <div class="content-container">
+        <div style="text-align: center;">
+            <h2>登录成功！</h2>
+            <p>恭喜你，操作已完成。</p>
+            <a href="javascript:history.back()" class="button easy-mode" style="margin-top: 20px; width: auto; padding: 12px 30px;">返回关卡</a>
+        </div>
+    </div>
+  </div>
+
+  <footer>
+    本靶场由 <a href="https://github.com/PurpleNewNew" target="_blank">PurpleNewNew</a> 重构
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const returnButton = document.querySelector('.button');
+    const referrer = document.referrer;
+
+    if (referrer && referrer.includes('hard.html')) {
+      returnButton.classList.remove('easy-mode');
+      returnButton.classList.add('hard-mode');
+    }
+  });
+</script>
+</body>
+</html>
