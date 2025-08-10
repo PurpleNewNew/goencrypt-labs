@@ -15,7 +15,7 @@
     <div class="content-container">
         <div style="text-align: center;">
             <h2>登录成功！</h2>
-            <p>恭喜你，操作已完成。</p>
+            <p>恭喜你，越来越牛逼了！</p>
             <a href="javascript:history.back()" class="button easy-mode" style="margin-top: 20px; width: auto; padding: 12px 30px;">返回关卡</a>
         </div>
     </div>
@@ -31,9 +31,8 @@
     const referrer = document.referrer;
 
     if (referrer && referrer.includes('hard.html')) {
-      returnButton.classList.remove('easy-mode');
-      returnButton.classList.add('hard-mode');
-    }
+          returnButton.classList.add('hard-mode');
+        }
   });
 </script>
 </body>
